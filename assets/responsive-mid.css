@@ -1,0 +1,193 @@
+
+@media screen and (max-width: 956px) and (min-width: 501px) {
+    html {
+        background-image: url(../assets/img/responsive_bckgrnd.jpg);
+    }
+
+    header{
+        position: absolute;
+    }
+
+    .container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+
+    h1 {
+        font-size: 40px;
+    }
+
+    strong {
+        font-size: 40px;
+        line-height: calc(20px + 10vh);
+    }
+
+    #hangerMan {
+        position: relative;
+        margin-top: 30%;
+        height: 500px;
+        width: 500px;
+    }
+    
+    #hangerImg {
+        border: 10px ridge rgba(92, 49, 0, 0.333);
+        height: 100%;
+        width: auto;
+    }
+
+    .line {
+        display: flex;
+    }
+
+
+    #wordP {
+        top: 10px;
+        left: 30px;
+    }
+
+    #word {
+        top: 10px;
+        left: 150px;
+    }
+
+    #letterUsedP {
+        top: 60px;
+        left: 30px;
+    }
+
+    #letterUsed {
+        top: 60px;
+        left: 200px;
+    }
+
+    #turnP {
+        top: 110px;
+        left: 30px;
+    }
+
+    #turn {
+        top: 110px;
+        left: 250px;
+    }
+
+    #winP {
+        font-size: 50px;
+        top: 100px;
+        left: 30px;
+        display: none;
+    }
+
+    #loseP {
+        font-size: 50px;
+        top: 100px;
+        left: 30px;
+        display: none;
+    }
+
+
+    .line p {
+        position: absolute;
+        font-size: 20px;
+        z-index: 1;
+        font-family: creepy, Arial, Helvetica, sans-serif;
+        background: -webkit-linear-gradient(90deg, rgb(130, 0, 0), rgb(255, 55, 55));
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        text-align: center;
+        text-shadow: 1px 1px 2px rgb(202, 0, 0), 0 0 1em rgba(0, 0, 0, 0.858), 0 0 0.2em rgba(0, 0, 0, 0.763);
+    }
+
+
+
+    .line input {
+        position: absolute;
+        border: 5px solid #00000052;
+        box-shadow: 0 0 10px #00000061;
+        left: 20px;
+        bottom: 10px;
+        padding: 5px;
+        width:50%;
+        font-size: 20px;
+        z-index: 1;
+        font-family: creepy, Arial, Helvetica, sans-serif;
+        background: -webkit-linear-gradient(90deg, rgb(130, 0, 0), rgb(255, 55, 55));
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        text-shadow: 1px 1px 2px rgb(202, 0, 0), 0 0 1em rgba(0, 0, 0, 0.858), 0 0 0.2em rgba(0, 0, 0, 0.763);
+        text-align: center;
+    }
+
+    .line input:focus {
+        outline: none !important;
+        border: 5px solid #44000052;
+        box-shadow: 0 0 10px #73000099
+    }
+
+    .line button:active {
+        outline: none !important;
+        border: 5px solid #44000052;
+        box-shadow: 0 0 10px #73000099
+    }
+
+    .line button:hover {
+        font-size: 32px;
+    }
+
+
+    .line button {
+        position: absolute;
+        right: 5px;
+        bottom: 10px;
+        border: 5px solid #00000052;
+        box-shadow: 0 0 10px #00000061;
+        font-size: 20px;
+        z-index: 1;
+        font-family: creepy, Arial, Helvetica, sans-serif;
+        background: -webkit-linear-gradient(90deg, rgb(130, 0, 0), rgb(255, 55, 55));
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        text-shadow: 1px 1px 2px rgb(202, 0, 0), 0 0 1em rgba(0, 0, 0, 0.858), 0 0 0.2em rgba(0, 0, 0, 0.763);
+        text-align: center;
+    }
+
+    .score-board {
+        background-image: url(../assets/img/scor-back.jpg);
+        background-size: cover;
+        border: 3px solid rgba(128, 128, 128, 0.568);
+        margin: 50px;
+        padding: 10px;
+        font-family: rustyc, Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        font-weight: bold;
+        color: rgba(67, 26, 0, 0.767);
+        text-align: center;
+    }
+    
+    h2 {
+        margin: 0;
+    }
+    
+    .reset button{
+        font-size: 18px;
+        font-weight: bold;
+        color: rgba(67, 26, 0, 0.767);
+        text-align: center;
+        background-color: transparent;
+    }
+    
+    .reset button:active {
+        outline: none !important;
+        border: 5px solid #441a0052;
+        box-shadow: 0 0 10px #933b0199
+    }
+    
+    .reset button:hover {
+        font-size: 20px;
+    }
+}
+

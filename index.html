@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/responsive.css">
+    <link rel="stylesheet" href="assets/responsive-mid.css">
+    <title>Pendu</title>
+</head>
+
+<body>
+    <header>
+        <h1>Le pendu de <strong>Evil Valley</strong></h1>
+    </header>
+    <div class="container">
+        <main id="hangerMan">
+            <img id="hangerImg" src="assets/img/hanger-six.png" alt="">
+            <div class="line">
+                <p id="wordP">Mot à deviner: </p>
+                <p id="word"></p>
+            </div>
+            <div class="line">
+                <p id="letterUsedP">Lettres utilisées: </p>
+                <p id="letterUsed"></p>
+            </div>
+            <div class="line">
+                <p id="turnP">Nombre d'essais restants:</p>
+                <p id="turn">6</p>
+            </div>
+            <div class="line">
+                <p id="winP">Bravo! Vous avez survécu!</p>
+            </div>
+            <div class="line">
+                <p id="loseP">Dommage! Vous êtes mort!</p>
+            </div>
+            <div class="line">
+                <input maxlength="1" id="letter" type="text">
+                <button id="button" onclick="submit()">Jouer</button>
+            </div>
+        </main>
+        <footer>
+            <div class="score-board">
+                <h2>TENSION DE LA CORDE</h2>
+                <div class="reset">
+                    <p class="score-display">0 DECANEWTON</p>
+                    <button onclick="continueGame()">Partie suivante</button>
+                    <button onclick="reload()">Recommencer</button>
+                </div>
+            </div>
+    </div>
+    </footer>
+    <script src="assets/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,14 @@
+
+function submit() {
+    let letter = document.querySelector("#letter").value;
+    console.log(letter);
+    document.querySelector("#letter").value = "";
+    tabLetter.push(letter);
+    document.querySelector("#letterUsed").innerHTML += letter;
+    console.log(tabLetter);
+}
+
+
+
+    for (let i = 1; i < tabLetter.length; i++) {
+      if (tabLetter.indexOf(letter) != tabLetter[i]) {
