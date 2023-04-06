@@ -36,15 +36,11 @@ header {
     text-align: center;
 }
 
-.container{
-    display: flex;
-    align-items: center;
-}
 
 h1 {
     margin: 10px;
     font-family: creepy, Arial, Helvetica, sans-serif;
-    font-size: 50px;
+    font-size: 60px;
     background: -webkit-linear-gradient(90deg, rgb(130, 0, 0), rgb(255, 55, 55));
     background-clip: text;
     -webkit-background-clip: text;
@@ -113,6 +109,11 @@ strong {
 }
 
 
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 
 #hangerMan {
     position: relative;
@@ -243,24 +244,31 @@ strong {
 }
 
 .score-board {
-    background-image: url(../assets/img/scor-back.jpg);
-    background-size: cover;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.356);
-    border: 3px solid rgba(128, 128, 128, 0.568);
-    margin: 50px;
+    
+    background-image: url(../assets/img/dashboard.png);
+    background-size:contain;
+    background-repeat: no-repeat;
+    margin: 50px 10px 50px 50px;
     padding: 10px;
     font-family: rustyc, Arial, Helvetica, sans-serif;
     font-size: 30px;
     font-weight: bold;
     color: rgba(67, 26, 0, 0.767);
     text-align: center;
+    flex: 1;
+}
+
+
+.score {
+    margin-top: 30%;
 }
 
 h2 {
-    margin: 0;
+    margin-left: 0;
 }
 
 .reset button{
+    margin-bottom: 10%;
     border: 5px solid #00000052;
     box-shadow: 0 0 10px #00000061;
     font-family: rustyc, Arial, Helvetica, sans-serif;
@@ -281,4 +289,44 @@ h2 {
 
 .reset button:hover {
     font-size: 20px;
+}
+
+
+
+
+@media screen and (max-width: 1214px) and (min-width: 956px) {
+
+    .score {
+        margin-top: 20%;
+    }
+    
+    h2 {
+        margin-left: 0;
+        font-size: 20px;
+    }
+    
+    .score-board {  
+        background-image: url(../assets/img/dashboard.png);
+        background-size:contain;
+        background-repeat: no-repeat;
+        margin: 50px 10px 50px 50px;
+        padding: 10px;
+        font-size: 20px;
+
+    }
+
+    .reset button{
+        margin-bottom: 10%;
+        border: 5px solid #00000052;
+        box-shadow: 0 0 10px #00000061;
+        font-family: rustyc, Arial, Helvetica, sans-serif;
+        font-size: 12px;
+        font-weight: bold;
+        color: rgba(67, 26, 0, 0.767);
+        text-align: center;
+        background-color: transparent;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
 }

@@ -1,32 +1,50 @@
-@media screen and (max-width: 956px) and (min-width: 501px) {
+@media screen and (max-width: 500px) {
+
     html {
         background-image: url(../assets/img/responsive_bckgrnd.jpg);
     }
 
-    header {
-        position: absolute;
-    }
 
-    .container {
+    .container{
         display: flex;
         flex-direction: column;
         justify-content: center;
     }
 
+    header{
+        position: absolute;
+    }
 
     h1 {
-        font-size: 40px;
+        font-size: 30px;
     }
 
     strong {
-        font-size: 40px;
+        font-size: 30px;
         line-height: calc(20px + 10vh);
     }
 
     #hangerMan {
-        margin-top: 30%;
-        height: 500px;
-        width: 500px;
+        position: relative;
+        margin-top: 35%;
+        height: 312px;
+        width: 312px;
+    }
+    
+    #hangerImg {
+        border: 10px ridge rgba(92, 49, 0, 0.333);
+        height: 100%;
+        width: auto;
+    }
+
+    .line {
+        display: flex;
+    }
+
+
+    #wordP {
+        top: 10px;
+        left: 30px;
     }
 
     #word {
@@ -70,17 +88,24 @@
 
 
     .line p {
+        position: absolute;
         font-size: 20px;
+        z-index: 1;
     }
+
 
 
     .line input {
+        position: absolute;
         left: 20px;
         bottom: 10px;
         padding: 5px;
-        width: 50%;
+        width:50%;
         font-size: 20px;
+        z-index: 1;
+
     }
+
 
     .line button:hover {
         font-size: 22px;
@@ -88,62 +113,67 @@
 
 
     .line button {
+        position: absolute;
         right: 5px;
         bottom: 10px;
         font-size: 20px;
+        z-index: 1;
     }
 
     .score-board {
         margin: 50px;
-        font-size: 20px;
-
+        padding: 10px;
+        font-size: 15px;
     }
-
+    
     h2 {
         margin: 0;
         font-size: 20px;
     }
-
-    .reset button {
-        font-size: 13px;
-        margin-left: 5px;
-        margin-right: 0;
-        font-weight: bold;
-    }
-
-    .reset button:hover {
-        font-size: 14px;
-    }
-    .score {
-        margin-top: 20%;
+    
+    .reset button{
+        font-size: 12px;
+        margin-bottom: 5px;
     }
     
+    
+    .reset button:hover {
+        font-size: 13px;
+    }
+
+    .score{
+        margin-top: 18%;
+    }
 }
 
-@media screen and (max-width: 614px) and (min-width: 501px) {
-
-    .score {
-        margin-top: 20%;
-    }
+@media screen and (max-width: 360px) {
     
     h2 {
         margin-left: 0;
-        font-size: 25px;
+        font-size: 15px;
     }
     
     .score-board {  
-        background-size:contain;
         margin: 50px 10px 50px 50px;
         padding: 10px;
-        font-size: 20px;
-
+        font-size: 12px;
     }
 
+    .score-display{
+        margin: 0;
+    }
+    
     .reset button{
-        margin-bottom: 10%;
+        margin-bottom: 1%;
         font-size: 12px;
         margin-left: 0;
         margin-right: 0;
     }
 
+    .score-btn{
+        display: flex;
+        flex-direction: column;
+    }
 }
+
+

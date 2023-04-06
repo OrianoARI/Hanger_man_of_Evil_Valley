@@ -2,7 +2,7 @@ function random(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-let words = ["un", "deux", "trois", "quatre"]; //liste de mots à deviner;
+let words = ["meurtre", "cadavre", "sang", "massacre", "éviscération", "pendaison", "horreur"]; //liste de mots à deviner;
 let tabLetter = []; // tableau des lettres utilisées;
 let wordDisplay = ""; //variable pour l'affichage du mot à deviner AVANT DE JOUER;
 let word = ""; //variable désignant le mot à deviner et qui est issu d'un index aléatoire du tableau words;
@@ -20,7 +20,10 @@ let score = 0;
 let scoreDisplay = document.querySelector(".score-display");
 
 
-function continueGame() {
+
+
+
+function continueGame() {//passer à la partie suivante
     wordRandom()
     turn = 6;
     document.querySelector("#turn").innerHTML = turn;
@@ -35,7 +38,7 @@ function continueGame() {
     document.querySelector("#letter").value = "";
 }
 
-function reload() {
+function reload() {//recommencer une partie
     wordRandom()
     turn = 6;
     document.querySelector("#turn").innerHTML = turn;
@@ -52,26 +55,31 @@ function reload() {
     document.querySelector(".score-display").innerHTML = score + " DECANEWTON";
 }
 
-function wordRandom() {
-    let indexRandom = random(0, words.length - 1);
-    word = words[indexRandom];
+async function wordRandom() {//sélectionner un mot au hasard
+    // let indexRandom = random(0, words.length - 1);
+    // word = words[indexRandom];
+    let response = await fetch("https://trouve-mot.fr/api/random")
+    console.log(response);
+    response = await response.json()
+    word = response[0].name
     wordDisplay = " - ";
     for (let i = 0; i < word.length - 1; i++) {
         wordDisplay += " - "
     }
     document.querySelector("#word").innerHTML = wordDisplay
     console.log(word);
+  
 }
-wordRandom()
+ wordRandom()
 
 
-function submit() {
-    letter = document.querySelector("#letter").value;
-    document.querySelector("#letter").value = "";
+function submit() {//saisir une lettre et voir si elle est dans le mot
+    letter = document.querySelector("#letter").value;//valeur de la lettre saisie par le joueur
+    document.querySelector("#letter").value = "";//input vide
     if (gameOver == false) {
-        if (tabLetter.indexOf(letter) == -1) {
-            tabLetter.push(letter);
-            document.querySelector("#letterUsed").innerHTML += letter;
+        if (tabLetter.indexOf(letter) == -1) {//vérifie si la lettre saisie dans l'input par le joueur a déjà été utilisée
+            tabLetter.push(letter);//si non, on push la lettre dans le tableau
+            document.querySelector("#letterUsed").innerHTML += letter;//on affiche le tableau de lettres utilisées dans le html
             compare()
         }
     }
@@ -80,27 +88,28 @@ function submit() {
 function compare() {
     let isLetterFind = false;
     wordDisplayed = "";
-    if (word.indexOf(letter) == -1 && turn > 0) {
-        turn--;
-        img.querySelector('img').src = "./assets/img/" + imgs[imgIndex] + imgExt
-        imgIndex++
-        document.querySelector("#turn").innerHTML = turn;
+    if (word.indexOf(letter) == -1 && turn > 0) {//vérifie si la lettre saisie dans l'input par le joueur existe dans le mot à deviner
+        turn--;//si non, on perd un tour
+        img.querySelector('img').src = "./assets/img/" + imgs[imgIndex] + imgExt//on affiche le pendu au fur et à mesure
+        imgIndex++ //on change l'image du pendu
+        document.querySelector("#turn").innerHTML = turn;//on affiche les tours restants
     }
 
-    for (let i = 0; i < word.length; i++) {
-        if (tabLetter.includes(word[i]) == true) {
-            wordDisplayed += word[i];
+    for (let i = 0; i < word.length; i++) {//on parcours le mot à deviner
+        if (tabLetter.includes(word[i]) == true) {//si la lettre utilisée(saisie par le joueur) existe dans le mot
+            wordDisplayed += word[i];//le mot affiché affiche la lettre
             console.log(isLetterFind);
         } else {
-            wordDisplayed += " - ";
+            wordDisplayed += " - ";//si non, la variable affiche un nouveau tiret
         }
     }
     vrf();
-    document.querySelector("#word").innerHTML = wordDisplayed;
+    document.querySelector("#word").innerHTML = wordDisplayed; //on affiche le mot à deviner dans le html
 
 }
 
-function vrf() {
+function vrf() { //vérification de victoire
+    console.log(word);
     if (wordDisplayed == word) {
         gameOver = true;
         win.style.display = "block";
