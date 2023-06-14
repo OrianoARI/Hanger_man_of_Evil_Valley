@@ -18,10 +18,13 @@ let win = document.querySelector("#winP");
 let lose = document.querySelector("#loseP");
 let score = 0;
 let scoreDisplay = document.querySelector(".score-display");
+let button = document.querySelector("#button");
 
-
-
-
+window.addEventListener("keyup",(event)=>{
+    if(event.keyCode === 13){
+        button.click();
+    }
+})
 
 function continueGame() {//passer à la partie suivante
     wordRandom()
@@ -59,7 +62,6 @@ async function wordRandom() {//sélectionner un mot au hasard
     // let indexRandom = random(0, words.length - 1);
     // word = words[indexRandom];
     let response = await fetch("https://trouve-mot.fr/api/random")
-    console.log(response);
     response = await response.json()
     word = response[0].name
     wordDisplay = " - ";
@@ -68,9 +70,9 @@ async function wordRandom() {//sélectionner un mot au hasard
     }
     document.querySelector("#word").innerHTML = wordDisplay
     console.log(word);
-  
+
 }
- wordRandom()
+wordRandom()
 
 
 function submit() {//saisir une lettre et voir si elle est dans le mot
@@ -84,6 +86,7 @@ function submit() {//saisir une lettre et voir si elle est dans le mot
         }
     }
 }
+
 
 function compare() {
     let isLetterFind = false;
